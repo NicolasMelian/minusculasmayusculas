@@ -140,8 +140,30 @@ function updateCounts() {
   document.getElementById("lineCount").innerText = numLines;
 }
 
+
+
 let textArea = document.getElementById("textArea");
+
+function updateCounts() {
+    let texto = textArea.value;
+
+    let caracteres = texto.length;
+    let palabras = texto.split(/\s+/).filter(Boolean).length; // Filtramos para eliminar cadenas vacías.
+    let renglones = texto ? texto.split('\n').length : 0;
+
+    document.getElementById('letterCount').textContent = caracteres;
+    document.getElementById('wordCount').textContent = palabras;
+    document.getElementById('lineCount').textContent = renglones;
+}
+
 textArea.addEventListener("input", updateCounts);
 
-updateCounts();
+updateCounts(); // Esto es para que se actualice el contador inicialmente cuando cargas la página.
 
+
+let btnBorrar = document.getElementById("deleteButton");
+
+btnBorrar.addEventListener("click", function() {
+    textArea.value = ""; // Limpiamos el contenido del textarea
+    updateCounts(); // Llamamos a la función para actualizar los contadores
+});

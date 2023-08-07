@@ -23,7 +23,7 @@
   <body>
     
     <header class="flex flex-col items-center justify-center gap-y-6 gap-x-6 my-9">
-    <h1 class="text-center text-2xl md:text-4xl font-bold">MinusculasMayusculas.com</h1>
+    <h1 class="text-center text-2xl md:text-4xl font-bold">MinúsculasMayúsculas.com</h1>
     <h3 class="text-center text-lg md:text-xl font-bold">Transforma tu texto con facilidad: convierte minúsculas y mayúsculas con un sólo clic.</h3>
     </header>
     
@@ -40,17 +40,17 @@
     <button onclick="transformEveryWordCapital()" class="bg-orange-500 text-white px-4 py-2 rounded transform hover:bg-orange-600 p-2 px-4 m-1.5">Primera Letra Mayúscula</button>
     <button onclick="transformAlternatingCase()" class="bg-orange-500 text-white px-4 py-2 rounded transform hover:bg-orange-600 p-2 px-4 m-1.5">AlTeRnAr</button>
     <button onclick="transformInverseCase()" class="bg-orange-500 text-white px-4 py-2 rounded transform hover:bg-orange-600 p-2 px-4 m-1.5">iNvErSa</button>
-    <button onclick="downloadText()" class="bg-orange-500 text-white px-4 py-2 rounded transform hover:bg-orange-600 p-2 px-4 m-1.5">Descargar</button>
-    <button onclick="copyOutputText()" class="bg-orange-500 text-white px-4 py-2 rounded transform hover:bg-orange-600 p-2 px-4 m-1.5">Copiar</button>
-    <button onclick="clearTextArea()" class="bg-orange-500 text-white px-4 py-2 rounded transform hover:bg-orange-600" p-2 px-4 m-1.5>Borrar</button>
+    <button onclick="downloadText()" class="bg-black text-white px-4 py-2 rounded transform hover:bg-gray-800 p-2 px-4 m-1.5">Descargar</button>
+    <button onclick="copyOutputText()" class="bg-black text-white px-4 py-2 rounded transform hover:bg-gray-800 p-2 px-4 m-1.5">Copiar</button>
+    <button onclick="clearTextArea()" class="bg-black text-white px-4 py-2 rounded transform hover:bg-gray-800 p-2 px-4 m-1.5" id="deleteButton">Borrar</button>
     </div>
     <div class="flex flex-wrap justify-center items-center">
       <h1 class="font-bold m-2">Contador De Letras: <span id="letterCount">0</span></h1><h1 class="font-bold m-2">Contador De Palabras:<span id="wordCount">0</span></h1><h1 class="font-bold m-2">Contedor de Líneas:<span id="lineCount">0</span></h1>
     </div>
 
-    <div class="grid grid-cols-2 gap-x-1 md:gap-x-4 my-6 w-11/12 mx-auto">
+    <div class="grid grid-cols-2 gap-x-1 md:gap-x-4 my-6 w-full md:w-11/12 mx-auto">
           <div class="border border-black m-4 p-2">
-          <h3 class="text-lg font-bold">¿Qué es Minúsculas Mayúsculas?</h3>
+          <h3 class="texd-md md:text-lg font-bold">¿Qué es Minúsculas Mayúsculas?</h3>
           <p>Nuestra aplicación te permite reescribir y transformar textos fácilmente. Puedes cambiar el formato de tus 
             textos a mayúsculas o minúsculas, convertir palabras a mayúsculas, alternar entre mayúsculas y minúsculas, e invertir el orden
             de las letras. Es una herramienta práctica para adaptar tus textos a diferentes estilos y necesidades. 
@@ -58,14 +58,14 @@
         </div>
       
         <div class="border border-black m-4 p-2">
-          <h3 class="text-lg font-bold">Iniciar en mayúscula</h3>
+          <h3 class="texd-md md:text-lg font-bold">Iniciar en mayúscula</h3>
           <p>Esta función reescribe el texto ingresado convirtiendo la primera letra de cada palabra en mayúscula y el resto 
             de las letras en minúsculas. Es una herramienta útil para cambiar el formato de un texto, ya sea para resaltar 
             adecuadamente los títulos o encabezados, o simplemente para seguir las convenciones de escritura de algunas palabras clave.</p>
         </div>
       
         <div class="border border-black m-4 p-2">
-          <h3 class="text-lg font-bold">Minúsculas</h3>
+          <h3 class="texd-md md:text-lg font-bold">Minúsculas</h3>
           <p>Esta función convierte todas las letras del texto ingresado en minúsculas. Es ideal para uniformizar el formato de 
             un texto y asegurarse de que todas las letras estén en minúsculas. Puede 
             ser útil cuando se desee un estilo más discreto o cuando se necesite seguir las reglas de escritura en ciertos
@@ -74,7 +74,7 @@
       </div>
 
       <div class="border border-black m-4 p-2">
-        <h3 class="text-lg font-bold">Mayúsculas</h3>
+        <h3 class="texd-md md:text-lg font-bold">Mayúsculas</h3>
         <p> Esta función convierte todas las letras del texto ingresado en mayúsculas. Es especialmente útil cuando se desea
            enfatizar un mensaje o cuando se necesita un estilo llamativo y resaltante en el texto.
            También puede ser utilizado para mejorar la legibilidad en ciertos casos, como en presentaciones o titulares.</p>
@@ -83,7 +83,7 @@
       
     
       <div class="border border-black m-4 p-2">
-        <h3 class="text-lg font-bold">Primera Letra Mayúscula</h3>
+        <h3 class="texd-md md:text-lg font-bold">Primera Letra Mayúscula</h3>
         <p>Con esta función, la primera letra de cada palabra en el texto ingresado se convierte en mayúscula, 
             mientras que las demás letras se mantienen en minúscula. Es una herramienta útil para asegurarse de que
              los nombres propios, títulos o encabezados 
@@ -92,14 +92,14 @@
         
 
         <div class="border border-black m-4 p-2">
-          <h3 class="text-lg font-bold">AlTeRnAr</h3>
+          <h3 class="texd-md md:text-lg font-bold">AlTeRnAr</h3>
           <p>Esta función alterna las letras del texto ingresado entre mayúsculas y minúsculas. Cada letra en posición impar 
             se convierte en mayúscula, mientras que cada letra en posición par se convierte en minúscula. Es una opción interesante para agregar un efecto visual y un toque
              de estilo único al texto. Puede ser utilizado para llamar la atención sobre palabras o frases específicas en un texto.</p>
       </div>
        
           <div class="border border-black m-4 p-2">
-          <h3 class="text-lg font-bold">iNvErSa</h3>
+          <h3 class="texd-md md:text-lg font-bold">iNvErSa</h3>
           <p>Esta función invierte el orden de las letras en el texto ingresado. La primera letra se coloca al final y la
              última letra se coloca al principio. Esta herramienta es útil para cambiar el orden de las letras de una palabra 
              o frase y puede ser utilizada para crear efectos visuales interesantes.
