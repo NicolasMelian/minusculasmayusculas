@@ -1,8 +1,223 @@
-@import 'tailwindcss/base';
-@import 'tailwindcss/components';
-@import 'tailwindcss/utilities';
- 
+body {
+    display: flex; 
+    align-items: center;
+    flex-direction: column; 
+    margin: 0; 
+}
 
-html, body {
+.header{ 
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    margin-top: 30px;
+}
+
+h1, h2, h3, p, a, div{
+    font-family: Inter,sans-serif;
+}
+h1{
+    font-size: 2.2rem;
+    color: black;
+}
+
+h2{
+    font-size: 1.3rem;
+    font-weight: 500;
+}
+
+h3{
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+p{
+    color: #4e5b6e;
+}
+
+a{
+    color: #ef6820;
+    text-decoration: none;
+}
+
+.titleDescription{
+    text-align: center;
+}
+
+.copyMessage{
+    font-size: 1rem;
+}
+.noTextMessage{
+    font-size: 1rem;
+    color: black;
+    font-weight: 600;
+}
+
+.textAreaGroup{
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    align-items: center;
+}
+
+#textArea{
+    height: 220px;
+    margin: 30px;
+    font-size: 1rem;
+    padding: 10px;
+}
+
+.areaButtons{
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap; /* Esto permitirá que los botones se "envuelvan" al siguiente renglón cuando no haya espacio */
+    justify-content: center; /* Esto centrará los botones horizontalmente */ 
+    gap: 10px; /* Espacio entre botones, es opcional */
+}
+
+.buttons{
+        color: #fff;
+        text-align: center;
+        background-color: #ef6820;
+        border: 1.5px solid #f38744;
+        border-radius: 8px;
+        padding: 0.8rem 1.5rem;
+        font-size: 1rem;
+        font-weight: 500;
+        margin: .3rem;
+}
+
+.buttons:hover {
+    background-color: #f38744;
+}
+
+.buttonsTwo{
+    color: #000;
+    border: 1.5px solid #b9bfb9;
+    background-color: transparent;
+    border-radius: 8px;
+    padding: 0.8rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    margin: .3rem;
+}
+
+.buttonsTwo:hover{
+    background-color: #c6cac6;
+}
+.description{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.description-one{
+    flex: 1 0 45%;    /* Ocupará el 50% del ancho de su contenedor */
+    box-sizing: border-box; /* Para incluir el padding y el border en el ancho total del elemento */
+    border: 1px solid black;  /* Solo para visualizar los divs, puedes eliminarlo si quieres */
+    padding: 10px;   /* Espacio interior, ajusta a tu preferencia */
+    border: 2px solid #d1d3d7;
+    border-radius: 12px;
+    padding: 1rem;
+    margin: 1rem;
+
+}
+
+.description-two{
+    flex: 1 0 45%;    /* Ocupará el 50% del ancho de su contenedor */
+    box-sizing: border-box; /* Para incluir el padding y el border en el ancho total del elemento */
+    border: 1px solid black;  /* Solo para visualizar los divs, puedes eliminarlo si quieres */
+    padding: 10px;   /* Espacio interior, ajusta a tu preferencia */
+    border: 2px solid #d1d3d7;
+    border-radius: 12px;
+    padding: 1rem;
+    margin: 1rem;
+
+}
+
+.description-one h3{
+    font-weight: 600;
+}
+
+.description-two h3{
+    font-weight: 600;
+}
+
+.contadorGroup{
+    display: flex; 
+    width: 90%;
+    align-items: center;
+    margin-top: 30px;
+    justify-content: center;
+}
+
+.contador{ 
+    margin: 10px 8px;
+    font-weight: 600;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+.footer{
+    display: flex; 
+    width: 100%;
+    height: 80px;
+    align-items: center; 
+    justify-content: center;
+    border-top: #8f9aab 1px solid;
+}
+
+.footer a{ 
+    color: black;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1.1rem;
+    padding: 20px;
+}
+
+.sobre-nosotros{
     min-height: 100vh;
 }
+
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    flex-grow: 1;
+}
+
+.description-about-us{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+}
+
+@media screen and (max-width: 992px) {
+     h1{
+        font-size: 1.5rem;
+     }
+
+     h2{
+        font-size: 1.3rem;
+     }
+
+     h3{
+        font-size: 1rem;
+     } 
+
+     .contador{
+        margin: 5px 3px;
+     }
+
+     .buttons{
+        margin: .1rem;
+        padding: .5rem 1.2rem;
+     }
+
+     .buttonsTwo{
+        margin: .1rem;
+        padding: .5rem 1.2rem;
+     }
+  }

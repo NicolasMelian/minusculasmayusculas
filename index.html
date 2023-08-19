@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Convertir Texto de Minúsculas a Mayúsculas Online</title>
+  <meta name="description" content="Convierte tu texto facilmente: de Minúsculas a Mayusculas, Mayúsculas a Minúsculas, 1º Letra En Mayúsculas, AlTeRnAnDo, InVErSA y más">
+  <script src="script.js" defer></script>
+  <link rel="canonical" href="https://minusculasmayusculas.com">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="icon" href="images/logo.png" alt="Logo Minusculas Mayusculas" type="image/icon type">
+  <link href="styles.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
+  <!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-69GT5KY4CG"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-69GT5KY4CG');
+</script>
+</head>
+  <body>
+    
+    <header class="header">
+    <h1>MinúsculasMayúsculas.com</h1>
+    <h2 class="titleDescription">Transforma tu texto con facilidad: convierte minúsculas y mayúsculas con un sólo clic.</h2>
+    </header>
+    
+  
+    <div class="textAreaGroup">
+        <div id="copyMessage" style="display: none" class="">¡Texto copiado!</div>
+        <div id="noTextMessage" style="display: none" class="">¡Primero coloca un texto para copiar!</div>    
+    <textarea id="textArea" style="width: 90%;" class="" placeholder="Ingresa Tu Texto Aqui..."></textarea>
+    </div>
+    <div class="areaButtons">
+    <button onclick="transformFirstCapital()" class="buttons">Iniciar en mayúscula</button>
+    <button onclick="transformAllLowercase()" class="buttons">minúsculas</button>
+    <button onclick="transformAllUppercase()" class="buttons">MAYÚSCULAS</button>
+    <button onclick="transformEveryWordCapital()" class="buttons">Primera Letra Mayúscula</button>
+    <button onclick="transformAlternatingCase()" class="buttons">AlTeRnAr</button>
+    <button onclick="transformInverseCase()" class="buttons">iNvErSa</button>
+    <button onclick="downloadText()" class="buttonsTwo">Descargar</button>
+    <button onclick="copyOutputText()" class="buttonsTwo">Copiar</button>
+    <button onclick="clearTextArea()" class="buttonsTwo" id="deleteButton">Borrar</button>
+    </div>
+    <div class="contadorGroup">
+      <h3 class="contador">Contador De Letras: <span id="letterCount">0</span></h3><h3 class="contador">Contador De Palabras: <span id="wordCount">0</span></h3><h3 class="contador">Contedor de Líneas: <span id="lineCount">0</span></h3>
+    </div>
+
+    <div class="description">
+          <div class="description-one">
+          <h3>¿Qué es Minúsculas Mayúsculas?</h3>
+          <p>Nuestra aplicación te permite reescribir y transformar textos fácilmente. Puedes cambiar el formato de tus 
+            textos a mayúsculas o minúsculas, convertir palabras a mayúsculas, alternar entre mayúsculas y minúsculas, e invertir el orden
+            de las letras. Es una herramienta práctica para adaptar tus textos a diferentes estilos y necesidades. 
+            ¡Prueba nuestra aplicación y dale un nuevo aspecto a tus textos con solo unos clics!</p>
+        </div>
+      
+        <div class="description-two">
+          <h3>Iniciar en mayúscula</h3>
+          <p>Esta función reescribe el texto ingresado convirtiendo la primera letra de cada palabra en mayúscula y el resto 
+            de las letras en minúsculas. Es una herramienta útil para cambiar el formato de un texto, ya sea para resaltar 
+            adecuadamente los títulos o encabezados, o simplemente para seguir las convenciones de escritura de algunas palabras clave.</p>
+        </div>
+      
+        <div class="description-one">
+          <h3>Minúsculas</h3>
+          <p>Esta función convierte todas las letras del texto ingresado en minúsculas. Es ideal para uniformizar el formato de 
+            un texto y asegurarse de que todas las letras estén en minúsculas. Puede 
+            ser útil cuando se desee un estilo más discreto o cuando se necesite seguir las reglas de escritura en ciertos
+             contextos.</p>
+        
+      </div>
+
+      <div class="description-two">
+        <h3>Mayúsculas</h3>
+        <p> Esta función convierte todas las letras del texto ingresado en mayúsculas. Es especialmente útil cuando se desea
+           enfatizar un mensaje o cuando se necesita un estilo llamativo y resaltante en el texto.
+           También puede ser utilizado para mejorar la legibilidad en ciertos casos, como en presentaciones o titulares.</p>
+      </div>
+      
+      
+    
+      <div class="description-one">
+        <h3>Primera Letra Mayúscula</h3>
+        <p>Con esta función, la primera letra de cada palabra en el texto ingresado se convierte en mayúscula, 
+            mientras que las demás letras se mantienen en minúscula. Es una herramienta útil para asegurarse de que
+             los nombres propios, títulos o encabezados 
+            comiencen con la letra inicial en mayúscula, siguiendo las reglas gramaticales y convenciones de escritura.</p>
+      </div>
+        
+
+        <div class="description-two">
+          <h3>AlTeRnAr</h3>
+          <p>Esta función alterna las letras del texto ingresado entre mayúsculas y minúsculas. Cada letra en posición impar 
+            se convierte en mayúscula, mientras que cada letra en posición par se convierte en minúscula. Es una opción interesante para agregar un efecto visual y un toque
+             de estilo único al texto. Puede ser utilizado para llamar la atención sobre palabras o frases específicas en un texto.</p>
+      </div>
+       
+          <div class="description-one">
+          <h3>iNvErSa</h3>
+          <p>Esta función invierte el orden de las letras en el texto ingresado. La primera letra se coloca al final y la
+             última letra se coloca al principio. Esta herramienta es útil para cambiar el orden de las letras de una palabra 
+             o frase y puede ser utilizada para crear efectos visuales interesantes.
+             También puede ser útil en ciertos contextos creativos o como una herramienta de encriptación simple.</p>
+        </div>
+
+        <div class="description-two">
+            <h3>Contador de letras, palabras y líneas</h3>
+            <p>Dentro de nuestra aplicación 'Minúsculas a Mayúsculas', además de transformar y adaptar texto, te ofrecemos la utilidad 'Contador de letras, palabras y renglones'. 
+                Esta herramienta te permite obtener un desglose detallado de tu contenido, ofreciéndote la cantidad exacta de letras, palabras y líneas en tus textos. 
+                Es la solución perfecta para quienes buscan no solo convertir el estilo de sus escritos, sino también entender y analizar su estructura y longitud con precisión.</p>
+        </div>
+  </div>
+  
+</body>
+<footer class="footer">
+  <a href="index.html" class="">Inicio</a>
+  <a href="sobre-nosotros.html" class="">Sobre Nosotros</a>
+</footer>
+</html>
