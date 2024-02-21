@@ -10,7 +10,20 @@ body {
     align-items: center;
     min-height: 100vh; /* Asegura que el body tenga al menos el alto del viewport */
     margin: 0;
+    font-family: 'Roboto', sans-serif;
+    
 }
+
+h1, h2, h3 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700; /* Para un peso en negrita */
+}
+
+p, li, a { /* Para texto regular */
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+}
+
 
 .container-body{
     max-width: 1080px;
@@ -33,7 +46,7 @@ ul {
     max-width: 100%;
     align-items: center;
     padding-top: 20px;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 }
 
 .header h1{
@@ -41,9 +54,7 @@ ul {
     font-weight: 600;
 }
 
-h1, h2, h3, p, a, div{
-    font-family: Inter,sans-serif;
-}
+
 
 h1{
     font-size: 2rem;
@@ -52,13 +63,20 @@ h1{
 
 h2{
     font-size: 1.3rem;
-    font-weight: 500;
 }
 
 h3{
     font-size: 1.1rem;
-    font-weight: 400;
 }
+
+
+  p {
+    font-size: 1rem; /* Ajusta según lo deseado */
+    line-height: 1.5; /* Ajusta para mejorar la legibilidad */
+    color: #4e5b6e; /* Este color ya está definido, solo asegúrate de que sea el deseado */
+  }
+  
+  
 
 p{
     color: #4e5b6e;
@@ -79,7 +97,6 @@ a{
 .noTextMessage{
     font-size: 1rem;
     color: black;
-    font-weight: 600;
 }
 
 .textAreaGroup{
@@ -92,7 +109,7 @@ a{
 
 #textArea{
     height: 220px;
-    margin: 30px;
+    margin: 20px;
     font-size: 1rem;
     padding: 10px;
 }
@@ -121,7 +138,6 @@ a{
         border-radius: 8px;
         padding: 0.7rem 1.4rem;
         font-size: 1rem;
-        font-weight: 500;
         margin: .3rem;
 }
 
@@ -136,7 +152,6 @@ a{
     border-radius: 8px;
     padding: 0.7rem 1.4rem;
     font-size: 1rem;
-    font-weight: 500;
     margin: .3rem;
 }
 
@@ -161,12 +176,6 @@ a{
 
 .description-one p{
     font-size: 1rem;
-    font-display: 500;
-    font-weight: 500;
-    font-family: Inter, sans-serif;
-
-
-
 }
 
 .description-two{
@@ -181,13 +190,7 @@ a{
 
 }
 
-.description-one h3{
-    font-weight: 600;
-}
 
-.description-two h3{
-    font-weight: 600;
-}
 
 .contadorGroup{
     display: flex; 
@@ -199,7 +202,6 @@ a{
 
 .contador{ 
     margin: 10px 8px;
-    font-weight: 600;
     font-size: 1rem;
     padding-bottom: 50px;
     text-align: center;
@@ -217,7 +219,6 @@ a{
 .footer a{ 
     color: black;
     text-decoration: none;
-    font-weight: 500;
     font-size: 1.1rem;
     padding: 20px;
 }
@@ -260,7 +261,6 @@ ul {
 .logo{
     width: 2em;
     height: auto;
-
 }
 
 /* Estilos para la navbar */
@@ -270,7 +270,6 @@ ul {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family: 'Inter', sans-serif;
     width: 100%;
     border-bottom: 1px solid gray;
 }
@@ -287,10 +286,10 @@ ul {
 .nav-logo {
     color: black;
     text-decoration: none;
-    font-weight: bold;
     display: flex;
     align-items: center;
     font-size:1.2rem;
+    font-weight: 700;
 }
 
 .nav-menu{
