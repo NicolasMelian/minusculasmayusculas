@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Convertir Texto a Negrita Online</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+    <link rel="icon" href="images/logo.png" alt="Logo Minusculas Mayusculas" type="image/icon type">
+    <link href="styles.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="navbar-container">
+            <a href="index.html" class="nav-logo">
+                <img src="images/logo.png" alt="Logo" class="logo">
+                MinúsculasMayúsculas
+            </a>
+            <ul class="nav-menu">
+                <li class="nav-item "><a href="index.html" class="nav-link">Minúsculas a Mayúsculas</a></li>
+                <li class="nav-item"><a href="texto-en-negrita.html" class="nav-link nav-item-active">Texto en Negrita</a></li>
+            </ul>
+            <div class="hamburger" id="hamburger-icon">
+                <i class="bar"></i>
+                <i class="bar"></i>
+                <i class="bar"></i>
+            </div>
+        </div>
+    </nav>
+    <div class="container-body">
+    
+    <header class="header">
+        <h1>Generador De Texto En Negrita</h1>
+    </header>
+    <div class="messages-bold">
+    <div id="copyMessage" style="display: none" class="">¡Texto copiado!</div>
+    <div id="noTextMessage" style="display: none" class="">¡Primero coloca un texto para copiar!</div>
+    </div>
+    <div class="textAreaGroup-bold">
+        <div class="textAreaGroup-noBold"> 
+            <textarea id="textArea-preBold" placeholder="Ingresa Tu Texto Aqui..."></textarea>
+        </div>
+        <div class="textArea-bold">
+        <textarea id="textArea-Bold" placeholder="Aquí Aparecerá Tu Texto En Negrita..."></textarea>
+        <div class="areaButtons-bold">
+            <button onclick="downloadText()" class="buttonsTwo">Descargar</button>
+            <button onclick="copyOutputText()" class="buttonsTwo">Copiar</button>
+            <a href="https://ko-fi.com/nicomelian" target="_blank" class="buttons kofi-button" id="donateButton">
+              <img src="/images/kofi.png" class="kofi" alt="">Cómprame Un Café</a>
+          </div>
+        </div>
+    </div>
+    <div class="contadorGroup">
+        <h3 class="contador">Contador De Letras: <span id="letterCount">0</span> |</h3><h3 class="contador">Contador De Palabras: <span id="wordCount">0</span> |</h3><h3 class="contador">Contador de Líneas: <span id="lineCount">0</span></h3>
+      </div>
+
+    <div class="description">
+        <div class="description-one">
+          <h3>¿Cómo funciona el generador de texto en negrita?</h3>
+          <p>Nuestro generador permite ingresar el texto que deseas resaltar y automáticamente lo convierte en negrita. Luego, puedes copiar el resultado o descargarlo como un archivo .txt para usarlo donde lo necesites.</p>
+        </div>
+      
+        <div class="description-two">
+          <h3>¿Es posible utilizar el texto en negrita en todas las redes sociales?</h3>
+          <p>Sí, el texto en negrita generado puede utilizarse en la mayoría de las redes sociales, como Facebook e Instagram para hacer que tus publicaciones y mensajes destaquen.</p>
+        </div>
+      
+        <div class="description-one">
+          <h3>¿Puedo convertir texto en negrita para uso en mi sitio web?</h3>
+          <p>Absolutamente. El generador produce texto en negrita que es compatible con HTML, facilitando su integración en tu sitio web para mejorar la legibilidad y el atractivo visual.</p>
+        </div>
+      
+        <div class="description-two">
+          <h3>¿Existe alguna limitación en la cantidad de texto que puedo convertir a negrita?</h3>
+          <p>No hay límites en la cantidad de texto que puedes convertir. Nuestro generador está diseñado para manejar desde frases cortas hasta párrafos extensos.</p>
+        </div>
+      
+        <div class="description-one">
+          <h3>¿Cómo puedo resaltar partes específicas de un texto en Facebook usando negrita?</h3>
+          <p>Simplemente ingresa el texto en nuestro generador y selecciona las partes que deseas en negrita. Copia el resultado y úsalo en tus publicaciones de Facebook para resaltar secciones específicas.</p>
+        </div>
+      </div>
+      
+      
+
+</div>
+<footer class="footer">
+    <a href="index.html">Inicio</a>
+    <a href="sobre-nosotros.html">Sobre Nosotros</a>
+</footer>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const inputArea = document.getElementById('textArea-preBold');
+    const outputArea = document.getElementById('textArea-Bold');
+  const hamburger = document.getElementById('hamburger-icon');
+  const navMenu = document.querySelector('.nav-menu');
+
+  hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+  });
+
+    inputArea.addEventListener('input', () => {
+        outputArea.value = convertToBold(inputArea.value);
+    });
+});
+
+const boldMap = {
+    'a': '𝗮', 'b': '𝗯', 'c': '𝗰', 'd': '𝗱', 'e': '𝗲', 'f': '𝗳', 'g': '𝗴', 'h': '𝗵', 'i': '𝗶', 'j': '𝗷',
+    'k': '𝗸', 'l': '𝗹', 'm': '𝗺', 'n': '𝗻', 'o': '𝗼', 'p': '𝗽', 'q': '𝗾', 'r': '𝗿', 's': '𝘀', 't': '𝘁',
+    'u': '𝘂', 'v': '𝘃', 'w': '𝘄', 'x': '𝘅', 'y': '𝘆', 'z': '𝘇',
+    'A': '𝗔', 'B': '𝗕', 'C': '𝗖', 'D': '𝗗', 'E': '𝗘', 'F': '𝗙', 'G': '𝗚', 'H': '𝗛', 'I': '𝗜', 'J': '𝗝',
+    'K': '𝗞', 'L': '𝗟', 'M': '𝗠', 'N': '𝗡', 'O': '𝗢', 'P': '𝗣', 'Q': '𝗤', 'R': '𝗥', 'S': '𝗦', 'T': '𝗧',
+    'U': '𝗨', 'V': '𝗩', 'W': '𝗪', 'X': '𝗫', 'Y': '𝗬', 'Z': '𝗭',
+    '0': '𝟬', '1': '𝟭', '2': '𝟮', '3': '𝟯', '4': '𝟰', '5': '𝟱', '6': '𝟲', '7': '𝟳', '8': '𝟴', '9': '𝟵',
+    '.': '•', ',': '，', ';': '；', ':': '：', '(':'（', ')':'）', '[':'［', ']':'］', '{':'｛', '}':'｝', '-':'－', '_':'＿', '+':'＋', '=':'＝'
+    // Nota: algunos símbolos se han sustituido por versiones de ancho completo o alternativas visuales cercanas.
+};
+
+function convertToBold(text) {
+    return Array.from(text).map(char => boldMap[char] || char).join('');
+}
+
+function downloadText() {
+    const textToDownload = document.getElementById('textArea-Bold').value;
+    const element = document.createElement('a');
+    element.setAttribute('href', 'data:text/plain;charset=utf-8,' + encodeURIComponent(textToDownload));
+    element.setAttribute('download', "texto_en_negrita.txt");
+
+    element.style.display = 'none';
+    document.body.appendChild(element);
+
+    element.click();
+
+    document.body.removeChild(element);
+}
+
+function copyOutputText() {
+    const textToCopy = document.getElementById('textArea-Bold');
+    const copyMessage = document.getElementById('copyMessage');
+    const noTextMessage = document.getElementById('noTextMessage');
+
+    // Primero, oculta ambos mensajes para asegurar que no se muestren simultáneamente
+    copyMessage.style.display = 'none';
+    noTextMessage.style.display = 'none';
+
+    // Luego, verifica si hay texto para copiar
+    if (textToCopy.value.trim() === '') {
+        // Si el área de texto está vacía, muestra el mensaje de error
+        noTextMessage.style.display = 'block';
+        setTimeout(() => {
+            noTextMessage.style.display = 'none';
+        }, 2000);
+    } else {
+        // Si hay texto, lo copia al portapapeles y muestra el mensaje de "Copiado"
+        textToCopy.select();
+        textToCopy.setSelectionRange(0, 99999); // Para dispositivos móviles
+        document.execCommand("copy");
+
+        copyMessage.style.display = 'block';
+        setTimeout(() => {
+            copyMessage.style.display = 'none';
+        }, 2000);
+    }
+}
+
+// Contador para el texto en negrita
+document.getElementById('textArea-preBold').addEventListener('input', function() {
+    const letterCount = document.getElementById('letterCount');
+    const wordCount = document.getElementById('wordCount');
+    const lineCount = document.getElementById('lineCount');
+    const text = this.value;
+
+    letterCount.textContent = text.length;
+    wordCount.textContent = text.split(/\s+/).filter(function(word) {
+        return word.length > 0;
+    }).length;
+    // contar líneas, incluyendo líneas vacías 
+    lineCount.textContent = text.split(/\r\n|\r|\n/).length;
+});
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

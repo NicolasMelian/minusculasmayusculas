@@ -1,23 +1,52 @@
-body {
-    display: flex; 
-    align-items: center;
-    flex-direction: column; 
-    margin: 0; 
+*::before,
+*::after {
+    box-sizing: border-box;
 }
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Asegura que el body tenga al menos el alto del viewport */
+    margin: 0;
+}
+
+.container-body{
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+.nav-item-active{
+    color: #f38744 !important;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+}
+
 
 .header{ 
     display: flex;
     flex-direction: column;
-    width: 100%;
+    max-width: 100%;
     align-items: center;
-    margin-top: 30px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.header h1{
+    font-size: 2rem;
+    font-weight: 600;
 }
 
 h1, h2, h3, p, a, div{
     font-family: Inter,sans-serif;
 }
+
 h1{
-    font-size: 2.2rem;
+    font-size: 2rem;
     color: black;
 }
 
@@ -36,7 +65,7 @@ p{
 }
 
 a{
-    color: #ef6820;
+    color: #000;
     text-decoration: none;
 }
 
@@ -75,13 +104,21 @@ a{
     gap: 10px; /* Espacio entre botones, es opcional */
 }
 
+.areaButtons-bold{
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap; /* Esto permitirá que los botones se "envuelvan" al siguiente renglón cuando no haya espacio */
+    justify-content: center; /* Esto centrará los botones horizontalmente */ 
+    gap: 5px; /* Espacio entre botones, es opcional */
+}
+
 .buttons{
         color: #fff;
         text-align: center;
         background-color: #ef6820;
         border: 1.5px solid #f38744;
         border-radius: 8px;
-        padding: 0.8rem 1.5rem;
+        padding: 0.7rem 1.4rem;
         font-size: 1rem;
         font-weight: 500;
         margin: .3rem;
@@ -96,7 +133,7 @@ a{
     border: 1.5px solid #b9bfb9;
     background-color: transparent;
     border-radius: 8px;
-    padding: 0.8rem 1.5rem;
+    padding: 0.7rem 1.4rem;
     font-size: 1rem;
     font-weight: 500;
     margin: .3rem;
@@ -119,6 +156,15 @@ a{
     border-radius: 12px;
     padding: 1rem;
     margin: 1rem;
+}
+
+.description-one p{
+    font-size: 1rem;
+    font-display: 500;
+    font-weight: 500;
+    font-family: Inter, sans-serif;
+
+
 
 }
 
@@ -146,13 +192,14 @@ a{
     display: flex; 
     width: 90%;
     align-items: center;
-    margin-top: 30px;
+    margin-top: 10px;
     justify-content: center;
 }
 
 .contador{ 
     margin: 10px 8px;
     font-weight: 600;
+    font-size: 1rem;
     padding-bottom: 50px;
     text-align: center;
 }
@@ -204,30 +251,246 @@ a{
     height: auto;
     margin-right: 4px;
 }
+
+ul {
+    list-style: none;
+}
+
+.logo{
+    width: 2em;
+    height: auto;
+
+}
+
+/* Estilos para la navbar */
+.navbar {
+    color: black;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    width: 100%;
+    border-bottom: 1px solid gray;
+}
+
+.navbar-container {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+.nav-logo {
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    font-size:1.2rem;
+}
+
+.nav-menu{
+    background-color: white;
+}
+.logo {
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.nav-menu {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+
+
+.nav-link:hover,
+.nav-link:focus {
+    color: #f38744;
+}
+
+
+/* Estilos para el menú de hamburguesa */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    background-color: #000;
+}
+
+.hamburger .bar {
+    display: block;
+    width: 20px;
+    height: 4px;
+    margin: 3px auto;
+    background-color: white;
+    transition: all 0.3s ease-in-out;
+}
+
+/* texto-en-negrita */
+.textAreaGroup-bold{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    max-width: 100%;
+}
+
+#textArea-preBold{
+    height: 210px;
+    padding: 10px;
+    margin: 8px;
+    font-size: 1rem;
+    width: 90%;
+}
+
+#textArea-Bold{
+    height: 200px;
+    padding: 8px;
+    font-size: 1rem;
+    width: 90%;
+}
+
+.textArea-bold{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    max-height: 220px;
+    justify-content: center;
+    align-items: center;
+}
+
+.textAreaGroup-noBold{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+}
+
+.messages-bold{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap; /* Esto permitirá que los botones se "envuelvan" al siguiente renglón cuando no haya espacio */
+    justify-content: center; /* Esto centrará los botones horizontalmente */ 
+    gap: 10px; /* Espacio entre botones, es opcional */
+}
+.areaButtons-bold{
+    margin-top: 8px;
+}
+
 @media screen and (max-width: 992px) {
-     h1{
-        font-size: 1.5rem;
-     }
 
-     h2{
-        font-size: 1.3rem;
-     }
+    .textAreaGroup-bold{
+        flex-direction: column;
+    }
 
-     h3{
+    .textArea-bold{
+        width: 90%;
+    }
+
+    .textAreaGroup-noBold{
+        width: 90%;
+    }
+
+    #textArea-preBold{
+        height: 170px;
+    }
+
+    #textArea-Bold{
+        height: 170px;
+    }
+
+    .nav-menu.active {
+        top: 70px; /* Posición final */
+    }
+    .nav-logo {
+        font-size:1rem;
+    }
+    .logo{
         font-size: 1rem;
-     } 
+    }
 
-     .contador{
+    .nav-item {
+        margin: .6rem .6rem;
+    }
+    .nav-item a{
+        padding: 0.6rem .6rem;
+    }
+
+    .contador{
         margin: 5px 3px;
-     }
+        font-size: 0.95rem;
+    }
 
-     .buttons{
-        margin: .1rem;
-        padding: .5rem 1.2rem;
-     }
+    h1{
+       font-size: 1.5rem;
+    }
 
-     .buttonsTwo{
-        margin: .1rem;
-        padding: .5rem 1.2rem;
-     }
-  }
+    .header{
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+
+    .header h1{
+        font-size: 1.5rem;
+    }
+
+    h2{
+       font-size: 1.3rem;
+    }
+
+    h3{
+       font-size: 1rem;
+    } 
+
+    .contador{
+       margin: 5px 3px;
+    }
+
+    .buttons{
+       margin: .1rem;
+       padding: .5rem 1.2rem;
+    }
+
+    .buttonsTwo{
+       margin: .1rem;
+       padding: .5rem 1.2rem;
+    }
+ }
+
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .nav-menu {
+        position: absolute;
+        top: -1000px; /* Posición inicial fuera de la vista */
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        transition: top 0.3s ease-in-out;
+        gap: 0px;
+    }
+
+   
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-menu.active {
+        top: 60px; /* Posición final */
+    }
+}
+

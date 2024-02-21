@@ -1,3 +1,15 @@
+document.addEventListener('DOMContentLoaded', () => {
+  const hamburger = document.getElementById('hamburger-icon');
+  const navMenu = document.querySelector('.nav-menu');
+
+  hamburger.addEventListener('click', () => {
+      navMenu.classList.toggle('active');
+  });
+});
+
+
+
+
 function transformFirstCapital() {
     var textArea = document.getElementById("textArea");
     textArea.value = textArea.value.charAt(0).toUpperCase() + textArea.value.slice(1).toLowerCase();
@@ -162,7 +174,7 @@ function transformFirstCapital() {
       document.getElementById('lineCount').textContent = renglones;
   }
   
-  textArea.addEventListener("input", updateCounts);
+  textArea.addEventListener('input', updateCounts);
   
   updateCounts(); // Esto es para que se actualice el contador inicialmente cuando cargas la página.
   
